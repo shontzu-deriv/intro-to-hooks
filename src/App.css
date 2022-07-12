@@ -42,3 +42,16 @@
   display:flex;
   justify-content:center;
 }
+
+h1{
+  margin:0;
+}
+
+button, input{
+  padding:10px;
+  margin:5px;
+  border-radius: 5px;
+  background-color:rgba(200,200,255,0.3);
+  border:1px solid white;
+  color:white;
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useToggle } from "./useToggle";
 
 export default function Button() {
   //USE STATE
@@ -26,26 +27,46 @@ export default function Button() {
     return () => clearInterval(intervalRef.current);
   });
 
+  //USE TOGGLE
+  const [open, toggle] = useToggle(false);
+
   return (
     <div>
+      <hr />
+      
       <h1>useState</h1>
-      <div className="flex">
-        <button onClick={() => setButtonText("clicked")}>{buttonText}</button>
-      </div>
-      <div className="flex">
+      <span>rerender component without refresh page</span>
+      <button onClick={() => setButtonText("clicked")}>{buttonText}</button>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <button onClick={decrementCount}>-</button>
         <h1>{count}</h1>
         <button onClick={incrementCount}>+</button>
       </div>
 
+      <hr />
+
       <h1>useRef</h1>
+      <span>
+        for "behind-the-scenes" stuff (i.e. updating variables) without
+        re-rendering component
+      </span>
       <div className="flex">
         <input ref={inputEl} />
         <button onClick={() => inputEl.current.focus()}>Focus the input</button>
       </div>
 
+      <hr />
+
       <h1>useEffect</h1>
-      <p>open console</p>
+      <span>(open console)</span>
+
+      <hr />
+      
+      <h1>useToggle</h1>
+      <span>equivalent of v-if in Vue</span>
+      <br />
+      {open && <span>JANJAN!</span>}
+      <button onClick={toggle}>Toggle</button>
     </div>
   );
 }
