@@ -20,7 +20,7 @@ export default function Button() {
   useEffect(() => {
     const id = setInterval(() => {
       console.log("useEffect");
-    }, 3000);
+      }, 3000);
 
     intervalRef.current = id;
 
@@ -33,7 +33,7 @@ export default function Button() {
   return (
     <div>
       <hr />
-      
+
       <h1>useState</h1>
       <span>rerender component without refresh page</span>
       <button onClick={() => setButtonText("clicked")}>{buttonText}</button>
@@ -58,7 +58,8 @@ export default function Button() {
       <hr />
 
       <h1>useEffect</h1>
-      <span>(open console)</span>
+      <span>(open console)<br />"watches" for changes of whatever stated in array and then executes the function within the useEffect</span>
+      <span></span>
 
       <hr />
       
