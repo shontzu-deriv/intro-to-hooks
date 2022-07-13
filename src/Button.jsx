@@ -20,7 +20,7 @@ export default function Button() {
   useEffect(() => {
     const id = setInterval(() => {
       console.log("useEffect");
-      }, 3000);
+    }, 3000);
 
     intervalRef.current = id;
 
@@ -32,6 +32,14 @@ export default function Button() {
 
   return (
     <div>
+      <hr />
+
+      <h1>React Router</h1>
+      <span>
+        equivalent of vue-router. <br /> rerender page without redirect to new page<br />
+      </span>
+      <i>todo: react router links</i>
+
       <hr />
 
       <h1>useState</h1>
@@ -58,11 +66,16 @@ export default function Button() {
       <hr />
 
       <h1>useEffect</h1>
-      <span>(open console)<br />"watches" for changes of whatever stated in array and then executes the function within the useEffect</span>
+      <span>
+        (open console)
+        <br />
+        "watches" for changes of whatever stated in array and then executes the
+        function within the useEffect
+      </span>
       <span></span>
 
       <hr />
-      
+
       <h1>useToggle</h1>
       <span>equivalent of v-if in Vue</span>
       <br />
